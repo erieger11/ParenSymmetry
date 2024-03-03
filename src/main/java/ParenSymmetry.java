@@ -5,8 +5,29 @@ public class ParenSymmetry {
 
     private Boolean isBalanced(String s) {
         // implement this method
+    boolean valid;
+    char[] newArray = s.toCharArray();
+    char[] newArray2 = new char[newArray.length];
+    int count = 0;
+        for(int i = 0, j = 0; i < newArray.length; i ++){
+                if(newArray[i] == '(' || newArray[i] == ')'){
+                    newArray2[j] = newArray[i];
+                    j++;
+                }
+        }
+        for(int i = 0 ; i < newArray2.length; i ++){
+            if(newArray2[i] == '(' || newArray2[i] == ')'){
+                count++;
+            }
+        }
         return null;
     }
+
+
+
+
+
+
 
     private void checkFile(String filename) {
         // open file named filename
