@@ -1,33 +1,25 @@
 package src.main.java;
 
-public class ParenSymmetry {
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class TheParenSymmetry {
 
 
-    private Boolean isBalanced(String s) {
+    public Boolean isBalanced(String s) {
         // implement this method
-    boolean valid;
-    char[] newArray = s.toCharArray();
-    char[] newArray2 = new char[newArray.length];
-    int count = 0;
-        for(int i = 0, j = 0; i < newArray.length; i ++){
-                if(newArray[i] == '(' || newArray[i] == ')'){
-                    newArray2[j] = newArray[i];
-                    j++;
-                }
-        }
-        for(int i = 0 ; i < newArray2.length; i ++){
-            if(newArray2[i] == '(' || newArray2[i] == ')'){
-                count++;
+        int counter = 0;
+        for (int i = 0; i < s.length(); i++) {
+            char parenCheck = s.charAt(i);
+            if (parenCheck == '(') {
+                counter--;
+            } else if (parenCheck == ')') {
+                counter++;
             }
         }
-        return null;
+        return counter == 0;
     }
-
-
-
-
-
-
 
     private void checkFile(String filename) {
         // open file named filename
@@ -39,8 +31,15 @@ public class ParenSymmetry {
         // CLOSE the file
     }
 
+
+
+
+
+
+
+
     public static void main(String[] args) {
-        ParenSymmetry ps = new ParenSymmetry();
+        TheParenSymmetry ps = new TheParenSymmetry();
 
         Boolean b0 = ps.isBalanced("()");
         printResult(b0, true);
