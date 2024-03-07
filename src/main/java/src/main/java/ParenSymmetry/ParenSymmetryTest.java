@@ -44,7 +44,7 @@ public class ParenSymmetryTest {
     }
     @Test
     public void isBalancedFalses() {
-        String[] falseStrings = {"(", "((", ")", "(()())((())))"};
+        String[] falseStrings = {"(", "((", ")","(()())((())))"};
         Boolean expected = false;
         Boolean actual;
         for (String testString : falseStrings) {
@@ -55,7 +55,7 @@ public class ParenSymmetryTest {
     @Test
     public void isBalancedTrues() {
         String[] trueStrings = {"()", "(())", "(((())))", "", "(()())((()))", "(   )", "( () ( ) )"};
-        Boolean expected = false;
+        Boolean expected = true;
         Boolean actual;
         for (String testString : trueStrings) {
             actual = new TheParenSymmetry().isBalanced(testString);
