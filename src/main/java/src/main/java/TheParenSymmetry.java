@@ -22,20 +22,21 @@ public class TheParenSymmetry {
     }
 
     private void checkFile(String filename) {
-        // open file named filename
+        try {
+            Scanner scan = new Scanner(new File(filename));
+            while(scan.hasNext())
+                System.out.println(isBalanced(scan.nextLine()));
 
+         } catch (FileNotFoundException fileNotFoundException) {
+            System.out.println("File not found");
+        }
+
+        // open file named filename
         // for each line in the file
             // read the line
             // print whether or not the line's parenthesis are balanced
-
         // CLOSE the file
     }
-
-
-
-
-
-
 
 
     public static void main(String[] args) {
@@ -57,7 +58,7 @@ public class TheParenSymmetry {
             trues = ps.isBalanced(strToTest);
         }
         printResult(trues, true);
-
+        ps.checkFile("testStrings0.txt");
     }
 
     private static void printResult(Boolean b0, boolean b) {

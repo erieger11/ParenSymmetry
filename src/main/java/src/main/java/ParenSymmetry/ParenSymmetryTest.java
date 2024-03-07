@@ -62,5 +62,4 @@ public class ParenSymmetryTest {
             Assert.assertEquals(expected, actual);
         }
     }
-
 }
